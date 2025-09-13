@@ -1,40 +1,56 @@
 #include <stdio.h>
 
 // Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
 
 int main() {
-    // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
-
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
-
-    // Nível Mestre - Habilidades Especiais com Matrizes
-    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
-    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
-    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
-
-    // Exemplos de exibição das habilidades:
-    // Exemplo para habilidade em cone:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 1 1 1 1 1
     
-    // Exemplo para habilidade em octaedro:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 0 0 1 0 0
+    // Nosso tabuleiro vai ser uma matriz 5x5.
+    int tabuleiro[5][5];
+    
+    // Vamos usar variáveis para guardar as coordenadas que a gente vai digitar.
+    int linha_navio1, coluna_navio1;
+    int linha_navio2, coluna_navio2;
+    
+    // Entrada de Dados
+    // Vamos pedir para o usuário digitar onde quer colocar o primeiro navio.
+    // Ele vai ser um navio horizontal, de 3 partes.
+    printf("Digite a linha para o Navio Horizontal (de 0 a 4): ");
+    scanf("%d", &linha_navio1);
+    
+    printf("Digite a coluna inicial para o Navio Horizontal (de 0 a 2): ");
+    scanf("%d", &coluna_navio1);
+    
+    // Agora a gente coloca o navio no tabuleiro, usando o que o usuário digitou.
+    // Usamos o numero 1.
+    tabuleiro[linha_navio1][coluna_navio1] = 1;
+    tabuleiro[linha_navio1][coluna_navio1 + 1] = 1;
+    tabuleiro[linha_navio1][coluna_navio1 + 2] = 1;
+    
+    // E agora o segundo navio. Ele é vertical e tem 3 partes.
+    printf("\nDigite a linha inicial para o Navio Vertical (de 0 a 2): ");
+    scanf("%d", &linha_navio2);
+    
+    printf("Digite a coluna para o Navio Vertical (de 0 a 4): ");
+    scanf("%d", &coluna_navio2);
+    
+    // Colocamos o segundo navio. Usamos o numero 2 pra ele.
+    tabuleiro[linha_navio2][coluna_navio2] = 2;
+    tabuleiro[linha_navio2 + 1][coluna_navio2] = 2;
+    tabuleiro[linha_navio2 + 2][coluna_navio2] = 2;
 
-    // Exemplo para habilidade em cruz:
-    // 0 0 1 0 0
-    // 1 1 1 1 1
-    // 0 0 1 0 0
+    // Saída de Dados
+    // Agora a gente tem que mostrar onde os navios estão, usando o que o usuário digitou.
+    printf("\n--- Onde estao os Navios ---\n");
+    
+    printf("Navio Horizontal (3 partes) esta nas coordenadas:\n");
+    printf("(%d, %d)\n", linha_navio1, coluna_navio1);
+    printf("(%d, %d)\n", linha_navio1, coluna_navio1 + 1);
+    printf("(%d, %d)\n", linha_navio1, coluna_navio1 + 2);
+    
+    printf("\nNavio Vertical (3 partes) esta nas coordenadas:\n");
+    printf("(%d, %d)\n", linha_navio2, coluna_navio2);
+    printf("(%d, %d)\n", linha_navio2 + 1, coluna_navio2);
+    printf("(%d, %d)\n", linha_navio2 + 2, coluna_navio2);
 
     return 0;
 }
